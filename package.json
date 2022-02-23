@@ -6,12 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "yarn run build && next export && type nul > out/.nojekyll",
+    "serve": "yarn run export && serve out",
+    "deploy": "yarn run export && node gh-pages.js"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
+    "moment": "^2.29.1",
     "next": "12.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.49.8",
+    "serve": "^13.0.2"
   },
   "devDependencies": {
     "eslint": "8.9.0",
